@@ -78,16 +78,37 @@ Sensitive credentials are stored in environment variables and excluded from Git.
 
 ## Screenshots / Demo
 
-Screenshots or a short video demonstrating the AI controlling the UI can be added here.
+### Login
 
-Recommended demo:
+![Login](./mail-login-screen.jpeg)
 
-1. AI searches or filters emails
-2. Inbox updates
-3. AI opens an email
-4. AI replies or composes an email
-5. Email is sent through Gmail
+### Inbox
 
+![Inbox](./inbox.jpeg)
+
+### Email Detail
+
+![Email Detail](./email-detail.jpeg)
+
+### Compose Email
+
+![Compose Email](./compose-email.jpeg)
+
+### Confirmation
+
+![Confirmation](./confirmation-popup.jpeg)
+
+### Sent Email
+
+![Sent Email](./sent-email.jpeg)
+
+### Light Mode
+
+![Light Mode](./lightmode-UI.jpeg)
+
+### AI Driven UI by Filters
+
+![AI Driven UI by Filters](./AI%20driven%20UI%20by%20filters.jpeg)
 ## Setup
 
 ### Requirements
