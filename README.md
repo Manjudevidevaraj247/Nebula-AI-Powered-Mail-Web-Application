@@ -127,7 +127,6 @@ npm test
 * Add pagination and attachment support
 * Improve automated test coverage
 * Improve AI error and rate-limit handling
-* Deploy a production version
 
 ## Deliverables
 
@@ -152,6 +151,9 @@ Private GitHub repository with:
 * Google OAuth 2.0
 * Google Generative AI
 * Jest
+## Live Demo
+
+https://nebula-ai-powered-mail-web-application-as4tr5g5f.vercel.app/
 
 ## Repository
 
