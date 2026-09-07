@@ -75,6 +75,10 @@ export default function Home() {
     primarySoft: darkMode ? "#172554" : "#eff6ff",
   };
 
+  function handleGoogleLogin() {
+    window.location.href = "/api/auth/login";
+  }
+
   useEffect(() => {
     if (activePage === "Inbox") {
       loadInbox(currentQuery);
@@ -1028,6 +1032,37 @@ ${currentEmailContext}`,
             Mail
           </h2>
         </div>
+
+        {/* GOOGLE LOGIN BUTTON */}
+        <button
+          onClick={handleGoogleLogin}
+          style={{
+            width: "100%",
+            padding: "12px 14px",
+            marginBottom: "12px",
+            border: `1px solid ${theme.border}`,
+            borderRadius: "9px",
+            background: theme.surface,
+            color: theme.text,
+            cursor: "pointer",
+            fontWeight: "700",
+            fontSize: "13px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "9px",
+          }}
+        >
+          <span
+            style={{
+              fontSize: "17px",
+              fontWeight: "800",
+            }}
+          >
+            G
+          </span>
+          Continue with Google
+        </button>
 
         <button
           onClick={() =>
