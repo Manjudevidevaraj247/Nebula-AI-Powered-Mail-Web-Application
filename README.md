@@ -151,9 +151,11 @@ Private GitHub repository with:
 * Google OAuth 2.0
 * Google Generative AI
 * Jest
+
+
 ## Live Demo
 
-https://nebula-ai-powered-mail-web-application-as4tr5g5f.vercel.app/
+https://nebula-ai-powered-mail-applicat.vercel.app/
 
 ## Repository
 
