@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nebula AI Powered Mail Web Application
 
-## Getting Started
+A Gmail-based web application built for the Nebula KnowLab Engineering Hiring Task.
 
-First, run the development server:
+The application connects to a real Gmail account and includes an AI assistant that understands natural-language requests and controls the mail interface.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+* Google OAuth authentication
+* Real Gmail Inbox and Sent mail
+* Open, compose and send emails
+* Reply and forward
+* Read/unread emails
+* Search and filters
+* Email conversation threads
+* Automatic mailbox refresh
+* Dark mode
+* Jest tests
+
+## AI Assistant
+
+The assistant is designed to control the UI, not just act as a chatbot.
+
+Examples:
+
+```text
+Show me unread emails from this week
+Open the latest email from David
+Send an email to john@example.com
+Reply to this
+Forward this email
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The assistant converts the request into an action and updates the main UI. It also uses the currently opened email as context for actions such as reply and forward.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Architecture
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+             User
+              |
+              v
+        Next.js / React UI
+          /           \
+         v             v
+      AI API       Gmail API
+         |             |
+         v             v
+    UI Actions      Real Gmail
+         |
+         v
+ Search / Compose / Reply /
+ Forward / Open / Filter
+```
 
-## Learn More
+* **UI:** Handles the mail interface.
+* **AI:** Understands natural-language requests and returns actions.
+* **Gmail Service:** Handles OAuth and Gmail API operations.
+* **UI Actions:** Executes AI commands in the main interface.
 
-To learn more about Next.js, take a look at the following resources:
+## Architecture Decisions & Trade-offs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Used **Gmail API** instead of mock data to work with real emails.
+* Used **structured AI actions** so the AI decides the intent while the frontend controls the UI.
+* Kept Gmail API operations on the **server side** to protect credentials.
+* Used **periodic refresh** for mailbox updates. A persistent Gmail Pub/Sub consumer would be the next step for true push-based sync.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Gmail Integration
 
-## Deploy on Vercel
+The application uses:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Google OAuth 2.0
+* Gmail API
+* Real Inbox and Sent data
+* Gmail email details and threads
+* Gmail send functionality
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Sensitive credentials are stored in environment variables and excluded from Git.
+
+## Screenshots / Demo
+
+Screenshots or a short video demonstrating the AI controlling the UI can be added here.
+
+Recommended demo:
+
+1. AI searches or filters emails
+2. Inbox updates
+3. AI opens an email
+4. AI replies or composes an email
+5. Email is sent through Gmail
+
+## Setup
+
+### Requirements
+
+* Node.js
+* Google Cloud project
+* Gmail API enabled
+* Google OAuth credentials
+* Gemini API key
+
+### Run Locally
+
+```bash
+git clone https://github.com/Manjudevidevaraj247/Nebula-AI-Powered-Mail-Web-Application.git
+cd Nebula-AI-Powered-Mail-Web-Application
+npm install
+npm run dev
+```
+
+Create a `.env.local` file with the required Google OAuth and Gemini credentials.
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
+## Testing
+
+```bash
+npm test
+```
+
+## What I Would Improve
+
+* Replace polling with Gmail Pub/Sub push notifications
+* Add pagination and attachment support
+* Improve automated test coverage
+* Improve AI error and rate-limit handling
+* Deploy a production version
+
+## Deliverables
+
+Private GitHub repository with:
+
+* Clean commit history
+* Setup instructions
+* Architecture decisions and trade-offs
+* Screenshots / demo
+* Required collaborators:
+
+  * Aswath363
+  * akshaiP
+  * ashwanthnebula
+
+## Tech Stack
+
+* Next.js
+* React
+* TypeScript
+* Gmail API
+* Google OAuth 2.0
+* Google Generative AI
+* Jest
+
+## Repository
+
+https://github.com/Manjudevidevaraj247/Nebula-AI-Powered-Mail-Web-Application
+
+Built for the Nebula KnowLab Engineering Hiring Task.
